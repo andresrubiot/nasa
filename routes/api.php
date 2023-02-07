@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ApodController;
 use App\Http\Controllers\Api\RoverController;
+use App\Http\Controllers\Api\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,8 @@ Route::controller(ApodController::class)->group(function() {
 
 Route::controller(RoverController::class)->group(function () {
     Route::get('/rover/{date}', 'show');
+});
+
+Route::controller(UsersController::class)->group(function () {
+    Route::post('/users/import', 'import');
 });
