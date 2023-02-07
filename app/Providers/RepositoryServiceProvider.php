@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\ApodRepository;
 use App\Interfaces\ApodRepositoryInterface;
+use App\Interfaces\RoverRepositoryInterface;
+use App\Repositories\RoverRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -16,6 +18,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(ApodRepositoryInterface::class, ApodRepository::class);
+        $this->app->bind(RoverRepositoryInterface::class, RoverRepository::class);
     }
 
     /**

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ApodController;
+use App\Http\Controllers\Api\RoverController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(ApodController::class)->group(function() {
     Route::get('/apod/{date}', 'show');
+});
+
+Route::controller(RoverController::class)->group(function () {
+    Route::get('/rover/{date}', 'show');
 });
